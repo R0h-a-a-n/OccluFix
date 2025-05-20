@@ -36,8 +36,8 @@ UnmaskNet is a simple U-Net-like encoder-decoder:
 
 ```bash
 # Clone repo
-git clone https://github.com/yourusername/UnmaskNet.git
-cd UnmaskNet
+git clone https://github.com/R0h-a-a-n/OccluFix.git
+cd OccluFix
 
 # Install dependencies
 pip install torch torchvision tqdm facenet-pytorch
