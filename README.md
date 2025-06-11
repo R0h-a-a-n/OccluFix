@@ -53,29 +53,29 @@ cd OccluFix
 pip install torch torchvision tqdm facenet-pytorch
 ```
 
-Step 2: Prepare Dataset
+### Step 2: Prepare Dataset
 Download CelebA and extract inside the project folder:
-
+```
 Copy
 Edit
 occlufix/
 ├── celeba/
 │   └── imgs/
 │       └── 000001.jpg ...
+```
 
-Step 3: Train the Model
-bash
-Copy
-Edit
+### Step 3: Train the Model
+```bash
 python train.py
-Mixed precision (via torch.cuda.amp) is enabled by default. Training checkpoints will be saved every epoch.
+```
+
+Mixed precision (via torch.cuda.amp) is enabled by default.
+Training checkpoints will be saved every epoch.
 
 Inference
 After training:
 
-python
-Copy
-Edit
+```python
 from model import InpaintingUNet
 from utils import show_inpainting_result
 import torch
@@ -84,13 +84,17 @@ model = InpaintingUNet().to(device)
 model.load_state_dict(torch.load("unmasknet_epoch_25_globalgan.pth"))
 model.eval()
 
-# Run inference using dataloader or custom image
-Future Work
-Add ArcFace identity loss for identity-aware inpainting
+Run inference using dataloader or custom image
+```
 
-Manual sketch or edge-based guidance support
+### Future Work
 
-Live camera inpainting demo
+1. Add ArcFace identity loss for identity-aware inpainting
 
-Web deployment (TorchScript or ONNX)
+2. Manual sketch or edge-based guidance support
+
+3. Live camera inpainting demo
+
+4. Web deployment (TorchScript or ONNX)
+
 
